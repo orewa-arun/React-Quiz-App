@@ -19,6 +19,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100..900&display=swap" rel="stylesheet">
     ```
 
+### COMPONENTS :
+
+1. Create a components folder in src.
+2. Components are units of the front-end functionality (They are actually functions starting with capital letters), making it easier to replicate and containerize the front end code.
+3. Export each component after defining them.
+    ```typescript
+    const QuestionCard = () => <div>Question Card</div>
+    export default QuestionCard;
+    ```
+
 ### CONNECTING TO AN API:
 
 1. In this project, we are using open trivia API for generating questions. We generated an API url.
+2. Create an API.ts file in src, where we make all the api calls and retrieve information
