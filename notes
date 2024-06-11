@@ -1,0 +1,24 @@
+
+### This whole project is made using following tutorial : 
+    https://www.youtube.com/watch?v=F2JCjVSZlG0
+
+
+### INITIAL SETUP :
+
+1. Use the following to create a react app instantly:
+    ```bash
+    npx create-react-app . --template typescript
+    ```
+2. Delete all the default css files in src folder as we will be custom designing at the end.
+3. Delete all the test files in src for now.
+4. Keep all your images in a seperate folder in src.
+5. Setup the required fonts by including the embed tag in head tag in index.html from google fonts website:
+    ```html
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100..900&display=swap" rel="stylesheet">
+    ```
+
+### CONNECTING TO AN API:
+
+1. In this project, we are using open trivia API for generating questions. We generated an API url.
