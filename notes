@@ -32,6 +32,16 @@
     ```html
     <QuestionCard />
     ```
+5. Define the prop type definition, so that props can be clearly passed into a component. ex :
+    ```typescript
+    type Props = {
+        id : Number,
+        question : string,
+        answer : string[]
+    }
+
+    const QuestionCard : React.FC<Props> = ({id, question, answer}) => (....);
+    ```
 
 ### CONNECTING TO AN API:
 
@@ -49,4 +59,24 @@
     <button onClick={buttonHandler}>
         ClickButton
     </button>
+    ```
+2. Use {} to include any js expression or value in react return ():
+    ```jsx
+    return (
+        <p className="questionNumber">
+            Question : {questionNr}
+        </p>
+    )
+    ```
+3. Use () for returning the renderable jsx code, and not {}. i.e instead of using :
+    ```jsx
+    const QuestionCard = () => {
+        return (
+            ...
+        )
+    }
+    ```
+    Use (ShortHand) :
+    ```jsx
+    const QuestionCard = () => (...)
     ```
