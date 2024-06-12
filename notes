@@ -112,3 +112,8 @@
     const newObj = {...obj, anotherObj};
     const sortedArray = [...array, extraElement].sort();
     ```
+7. array.map(function) creates a new array where every element of the array is passed through the function and the return value
+  is used.
+    ```typescript
+    const newArray = array.map((ele) => (ele + 1));
+    ```
