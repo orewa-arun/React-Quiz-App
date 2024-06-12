@@ -16,7 +16,7 @@ function App() {
   const [score, setScore] = useState(0);
   const [gameOver, setGameOver] = useState(true);
 
-  fetchQuizQuestions(10, Difficulty.EASY);
+  console.log(fetchQuizQuestions(10, Difficulty.HARD));
 
   // Where the Questions will be fetched from API
   const startTrivia = async() => {

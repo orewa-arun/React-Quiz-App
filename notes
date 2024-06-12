@@ -107,3 +107,8 @@
     // now instead of "medium" i can use: 
     console.log(Difficulty.MEDIUM);
     ```
+6. {...array} spreads the elements of the array. i.e `...` is the spread operator.
+    ```typescript
+    const newObj = {...obj, anotherObj};
+    const sortedArray = [...array, extraElement].sort();
+    ```
