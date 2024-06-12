@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 
 // components
 import QuestionCard from "./components/QuestionCard";
 
+const TOTAL_QUESTIONS = 10;
+
 function App() {
+
+  // States
+  const [loading, setLoading] = useState(false);
+  const [questions, setQuestions] = useState([]);
+  const [number, setNumber] = useState(0);
+  const [userAnswers, setUserAnswers] = useState([]);
+  const [score, setScore] = useState(0);
+  const [gameOver, setGameOver] = useState(true);
 
   // Where the Questions will be fetched from API
   const startTrivia = async() => {
@@ -34,7 +44,16 @@ function App() {
 
       {/* You can use a spinner instead */}
       <p>Loading Question ...</p>
-      <QuestionCard />
+      
+      {/* Fitting in the QuestionCard component */}
+      <QuestionCard
+        questionNr={number + 1}
+        totalQuestions={TOTAL_QUESTIONS}
+        question={questions[number].question}
+        answers={questions[number].answer}
+        userAnswer={ userAnswers ? userAnswers[number] : undefined}
+        callback={checkAnswer}
+      />
       <button className="next" onClick={nextQuestion}>
         next
       </button>

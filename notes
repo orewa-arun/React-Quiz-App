@@ -30,7 +30,9 @@
     ```
 4. This is how you insert a component for rendering:
     ```html
-    <QuestionCard />
+    <QuestionCard props={propObj}/>
+    <!-- or pass the prop arguments individually-->
+    <QuestionCard questionNr={number + 1} totalQuestions={TOTAL_QUESTIONS}>
     ```
 5. Define the prop type definition, so that props can be clearly passed into a component. ex :
     ```typescript
@@ -79,4 +81,9 @@
     Use (ShortHand) :
     ```jsx
     const QuestionCard = () => (...)
+    ```
+4. Define all global states in App.tsx so that they can be played with using other props, you can use useState() hook for that:
+    ```typescript
+    <!-- loading is the variable state, setLoading is the state setter, and false is the initial state of loading -->
+    const [loading, setLoading] = useState(false)
     ```
