@@ -48,7 +48,16 @@
 ### CONNECTING TO AN API:
 
 1. In this project, we are using open trivia API for generating questions. We generated an API url.
-2. Create an API.ts file in src, where we make all the api calls and retrieve information
+2. Create an API.ts file in src, where we make all the api calls and retrieve information.
+3. STEPS to retrieve information from an API endpoint : 
+    * Define the endpoint.
+    * Use await fetch(`url`) for obtaining data from the endpoint
+    * Make it in json format using await data.json()
+    ```typescript
+    const endpoint = `https://opentdb.com/api.php?amount=${amount}&category=31&difficulty=${difficulty}&type=multiple`;
+    const data = await fetch(endpoint);
+    const dataJson = await data.json();
+    ```
 
 
 ### SIDE NOTES:
@@ -86,4 +95,15 @@
     ```typescript
     <!-- loading is the variable state, setLoading is the state setter, and false is the initial state of loading -->
     const [loading, setLoading] = useState(false)
+    ```
+5. ENUMs are used for substituting values using other variable names:
+    ```typescript
+    export enum Difficulty{
+        EASY : "easy",
+        MEDIUM : "medium",
+        HARD : "hard"
+    }
+
+    // now instead of "medium" i can use: 
+    console.log(Difficulty.MEDIUM);
     ```
