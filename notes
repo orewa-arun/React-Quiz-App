@@ -117,3 +117,10 @@
     ```typescript
     const newArray = array.map((ele) => (ele + 1));
     ```
+8. When you use events like formEvent or mouseEvent, the `value` option that you pass is crucial for further operation of those
+ events in either callback function or in modifying states.
+    ```jsx
+    <button onClick={callback} value={valueOption} disabled={disableOption}>
+        <span> Button </span>
+    </button>
+    ``` 
