@@ -1,8 +1,13 @@
 import React, { useState } from "react";
+
+// types
 import { Difficulty, fetchQuizQuestions, QuestionState } from "./API";
 
 // components
 import QuestionCard from "./components/QuestionCard";
+
+// styles
+import { GlobalStyle, Wrapper } from "./App.styles";
 
 const TOTAL_QUESTIONS = 10;
 
@@ -78,16 +83,18 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <h1>REACT QUIZ</h1>
-      {gameOver || userAnswers.length == TOTAL_QUESTIONS ? (
+    <>
+    <GlobalStyle />
+    <Wrapper>
+      <h1>ANIME QUIZ</h1>
+      {gameOver || userAnswers.length === TOTAL_QUESTIONS ? (
               <button className="start" onClick={startTrivia}>
               Start
             </button>
         ): null
       }
       {/* Where the score will be displayed */}
-      {!gameOver? (<p className="Score"> Score : {score}</p>) : null}
+      {!gameOver? (<p className="score"> Score : {score}</p>) : null}
 
       {/* You can use a spinner instead */}
       {loading && (<p>Loading Question ...</p>)}
@@ -106,17 +113,15 @@ function App() {
       )
       }
 
-      {!gameOver && !loading && userAnswers.length == number + 1 && number !== TOTAL_QUESTIONS - 1 ? 
+      {!gameOver && !loading && userAnswers.length === number + 1 && number !== TOTAL_QUESTIONS - 1 ? 
         (
             <button className="next" onClick={nextQuestion}>
               next
             </button>
         ) : null
       }
-
-
-
-    </div>
+    </Wrapper>
+    </>
   );
 }
 
